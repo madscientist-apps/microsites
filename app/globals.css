@@ -32,7 +32,7 @@ nav a:hover { border-color:var(--rust); }
 .mobile-menu a { display:block; padding:10px; font-weight:600; }
 
 .hero { min-height:690px; position:relative; overflow:hidden; background:#203a3a; color:#fff; }
-.hero-photo { position:absolute; inset:0; background-image:url('https://images.pexels.com/photos/27134985/pexels-photo-27134985.jpeg?auto=compress&cs=tinysrgb&w=2000'); background-size:cover; background-position:center; transform:scale(1.015); }
+.hero-photo { position:absolute; inset:0; background-image:url('https://images.pexels.com/photos/28726413/pexels-photo-28726413.jpeg?auto=compress&cs=tinysrgb&w=2000'); background-size:cover; background-position:right center; transform:scale(1.015); }
 .hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(14,38,39,.88) 0%,rgba(14,38,39,.62) 40%,rgba(14,38,39,.18) 70%,rgba(14,38,39,.05) 100%),linear-gradient(0deg,rgba(13,34,34,.30),transparent 55%); }
 .hero-grid { min-height:690px; position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.25fr) 390px; align-items:center; gap:80px; padding-top:44px; padding-bottom:44px; }
 .eyebrow,.kicker { font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
@@ -215,7 +215,7 @@ nav a:hover { border-color:var(--rust); }
 .header-phone small { color:#6e604e; font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
 .header-phone strong { font-size:18px; }
 .hero { min-height:720px; background:#3f442c; border-bottom:3px solid var(--ink); }
-.hero-photo { filter:sepia(.2) saturate(.9) contrast(1.02); background-position:center 40%; }
+.hero-photo { filter:sepia(.2) saturate(.9) contrast(1.02); background-position:right 40%; }
 .hero-shade {
   background:linear-gradient(90deg,rgba(53,50,31,.90) 0%,rgba(67,81,50,.60) 44%,rgba(72,71,43,.20) 72%,rgba(55,46,31,.08) 100%),
   linear-gradient(0deg,rgba(41,35,24,.35),transparent 55%);
