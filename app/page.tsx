@@ -20,7 +20,7 @@ export default function Home() {
     <main>
       <div className="topbar">
         <div className="shell topbar-inner">
-          <span>Serving Yukon and surrounding communities since 1976</span>
+          <span>HVAC Contractors — Quick Response Time | Same-Day Services | Licensed and Insured</span>
           <a href="https://maps.google.com/?q=501+Cedar+Ave+Yukon+OK+73099"><MapPin size={14} /> 501 Cedar Ave, Yukon</a>
         </div>
       </div>
@@ -32,8 +32,8 @@ export default function Home() {
             <span className="brand-copy"><strong>RAINBOW</strong><small>HEAT &amp; AIR · SINCE 1976</small></span>
           </a>
           <nav aria-label="Main navigation">
-            <a href="#services">Services</a><a href="#why-rainbow">Why Rainbow</a>
-            <a href="#about">Our Story</a><a href="#reviews">Reviews</a>
+            <a href="#air-conditioning">Air Conditioning</a><a href="#heating">Heating</a>
+            <a href="#carrier">Carrier</a><a href="#about">About</a><a href="#contact">Contact</a>
           </nav>
           <a className="header-phone" href={phoneHref}>
             <span className="phone-icon"><Phone size={18} /></span>
@@ -41,7 +41,7 @@ export default function Home() {
           </a>
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><Menu /></summary>
-            <div><a href="#services">Services</a><a href="#why-rainbow">Why Rainbow</a><a href="#about">Our Story</a><a href="#reviews">Reviews</a><a href={phoneHref}>Call (405) 354-5541</a></div>
+            <div><a href="#air-conditioning">Air Conditioning</a><a href="#heating">Heating</a><a href="#carrier">Carrier</a><a href="#about">About</a><a href="#contact">Contact</a><a href={phoneHref}>Call (405) 354-5541</a></div>
           </details>
         </div>
       </header>
@@ -52,11 +52,11 @@ export default function Home() {
         <div className="shell hero-grid">
           <div className="hero-copy">
             <div className="eyebrow"><span /> Yukon&apos;s hometown comfort company · Est. 1976</div>
-            <h1>Comfort you can count on. <em>People you can trust.</em></h1>
-            <p>For five decades, Yukon families have called Rainbow for honest heating and air conditioning service, clear answers, and work done right.</p>
+            <h1>Get Consistent Heating or Air Conditioning Systems Installed <em>Today</em></h1>
+            <p>Rainbow Heat &amp; Air Inc is a family-owned business with over 25 years of experience providing air conditioning and heating services. We&apos;re a Christian-based business and are loyal and honest with our customers. We&apos;re licensed and bonded for your protection. Call us for a FREE estimate — we&apos;ll provide you with an estimate on the same business day.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={phoneHref}><Phone size={18} /> Call for service</a>
-              <a className="button button-ghost" href="#services">Explore services <ArrowRight size={18} /></a>
+              <a className="button button-primary" href={phoneHref}><Phone size={18} /> Request a Service</a>
+              <a className="button button-ghost" href="#air-conditioning">Explore services <ArrowRight size={18} /></a>
             </div>
             <div className="hero-trust">
               <span><BadgeCheck size={17} /> Licensed &amp; bonded</span>
@@ -100,20 +100,23 @@ export default function Home() {
             <p>Whether the AC quits in July or your heater starts acting up in January, our team brings experience, practical solutions, and no runaround.</p>
           </div>
           <div className="service-grid">
-            <article className="service-tile cooling">
+            <article className="service-tile cooling" id="air-conditioning">
               <div className="tile-number">01</div><div className="icon-box"><Snowflake /></div>
-              <h3>Air Conditioning</h3><p>Repairs, service, and high-quality cooling installations for homes and businesses.</p>
-              <a href={phoneHref}>Get AC help <ArrowRight /></a>
+              <h3>Air Conditioning</h3>
+              <p>Your home should be at a comfortable temperature all year long, despite the season — is it? If your AC is inconsistent or you go through spurts of hot spells, give us a call. We can help provide your home with a more consistent system.</p>
+              <a href={phoneHref}>Learn More <ArrowRight /></a>
             </article>
-            <article className="service-tile heating">
+            <article className="service-tile heating" id="heating">
               <div className="tile-number">02</div><div className="icon-box"><Flame /></div>
-              <h3>Heating</h3><p>Dependable furnace service, repair, and replacement for Oklahoma&apos;s coldest days.</p>
-              <a href={phoneHref}>Get heating help <ArrowRight /></a>
+              <h3>Heating</h3>
+              <p>You and your family need to be comfortable during the long, brutal months of winter. Whether you want one of our experts to check your current system or replace it with one of our energy-efficient systems, we&apos;re here to help.</p>
+              <a href={phoneHref}>Learn More <ArrowRight /></a>
             </article>
-            <article className="service-tile systems">
+            <article className="service-tile systems" id="carrier">
               <div className="tile-number">03</div><div className="icon-box"><Wrench /></div>
-              <h3>New Systems</h3><p>Efficient Carrier equipment, expert installation, and straightforward guidance.</p>
-              <a href={phoneHref}>Request an estimate <ArrowRight /></a>
+              <h3>Carrier Products</h3>
+              <p>Turn to the Carrier factory authorized dealers at Rainbow Heat &amp; Air Inc for quality air conditioning and heating products. Call us for a FREE estimate on new installations and replacements. Our response time is quick.</p>
+              <a href={phoneHref}>Learn More <ArrowRight /></a>
             </article>
           </div>
         </div>
@@ -170,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta">
+      <section className="cta" id="contact">
         <div className="shell cta-inner">
           <div><p className="kicker">We&apos;re ready when you need us</p><h2>Let&apos;s make your home comfortable.</h2></div>
           <a className="button button-light" href={phoneHref}><Phone size={19} /> (405) 354-5541</a>
@@ -183,7 +186,7 @@ export default function Home() {
             <a className="brand footer-brand" href="#top"><RainbowMark /><span className="brand-copy"><strong>RAINBOW</strong><small>HEAT &amp; AIR · SINCE 1976</small></span></a>
             <p>Honest heating and air conditioning service for Yukon and surrounding communities.</p>
           </div>
-          <div><h3>Services</h3><a href="#services">Air conditioning</a><a href="#services">Heating</a><a href="#services">New systems</a><a href="#services">Carrier products</a></div>
+          <div><h3>Services</h3><a href="#air-conditioning">Air Conditioning</a><a href="#heating">Heating</a><a href="#carrier">Carrier Products</a></div>
           <div><h3>Visit us</h3><a href="https://maps.google.com/?q=501+Cedar+Ave+Yukon+OK+73099">501 Cedar Ave<br />Yukon, OK 73099</a><span>Mon–Fri, 8am–5pm<br />Closed Sat–Sun</span></div>
           <div><h3>Contact</h3><a className="footer-phone" href={phoneHref}>(405) 354-5541</a><a href="mailto:rainbowha95@yahoo.com">rainbowha95@yahoo.com</a></div>
         </div>
