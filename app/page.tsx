@@ -59,7 +59,7 @@ export default function Home() {
               <a className="button button-ghost" href="#services">Explore services <ArrowRight size={18} /></a>
             </div>
             <div className="hero-trust">
-              <span><BadgeCheck size={17} /> Licensed &amp; insured</span>
+              <span><BadgeCheck size={17} /> Licensed &amp; bonded</span>
               <span><Wrench size={17} /> We service all brands</span>
               <span><ShieldCheck size={17} /> Family owned</span>
             </div>
@@ -144,6 +144,18 @@ export default function Home() {
           <blockquote>“I would recommend Rainbow Heating &amp; Air to everyone, and I have. They are reasonable in their charges, quick to respond and very courteous.”</blockquote>
           <p><strong>Diane W.</strong><span>Rainbow customer</span></p>
         </div>
+        <div className="shell more-reviews">
+          <div className="review-tile">
+            <div className="stars" aria-label="5 stars"><Star /><Star /><Star /><Star /><Star /></div>
+            <p>“I have used Rainbow for over 15 years and have always been impressed with their service and expertise. When it came time to replace my heat and air unit I totally trusted their choice of Carrier. I will continue to use Rainbow.”</p>
+            <span>Long-time Rainbow customer</span>
+          </div>
+          <div className="review-tile">
+            <div className="stars" aria-label="5 stars"><Star /><Star /><Star /><Star /><Star /></div>
+            <p>“Rainbow Heat and Air was very knowledgeable, professional and very friendly. I would highly recommend them to anyone I know.”</p>
+            <span>Rainbow customer</span>
+          </div>
+        </div>
       </section>
 
       <section className="about section" id="about">
@@ -172,10 +184,10 @@ export default function Home() {
             <p>Honest heating and air conditioning service for Yukon and surrounding communities.</p>
           </div>
           <div><h3>Services</h3><a href="#services">Air conditioning</a><a href="#services">Heating</a><a href="#services">New systems</a><a href="#services">Carrier products</a></div>
-          <div><h3>Visit us</h3><a href="https://maps.google.com/?q=501+Cedar+Ave+Yukon+OK+73099">501 Cedar Ave<br />Yukon, OK 73099</a><span>Call for current availability</span></div>
+          <div><h3>Visit us</h3><a href="https://maps.google.com/?q=501+Cedar+Ave+Yukon+OK+73099">501 Cedar Ave<br />Yukon, OK 73099</a><span>Mon–Fri, 8am–5pm<br />Closed Sat–Sun</span></div>
           <div><h3>Contact</h3><a className="footer-phone" href={phoneHref}>(405) 354-5541</a><a href="mailto:rainbowha95@yahoo.com">rainbowha95@yahoo.com</a></div>
         </div>
-        <div className="shell footer-bottom"><span>© 2026 Rainbow Heat &amp; Air Inc.</span><span>Licensed &amp; insured · Family owned · Serving Yukon since 1976</span></div>
+        <div className="shell footer-bottom"><span>© 2026 Rainbow Heat &amp; Air Inc.</span><span>Licensed &amp; bonded · Family owned · Serving Yukon since 1976</span></div>
       </footer>
     </main>
   );

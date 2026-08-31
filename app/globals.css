@@ -113,6 +113,10 @@ h1 em { color:#f1c566; font-style:italic; }
 blockquote { margin:0 auto; font-size:clamp(30px,4.5vw,50px); line-height:1.22; letter-spacing:-.025em; }
 .testimonial p { margin-top:28px; display:flex; flex-direction:column; gap:3px; }
 .testimonial p span { color:#aebfba; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
+.more-reviews { margin-top:60px; padding-top:52px; border-top:1px solid #ffffff26; display:grid; grid-template-columns:1fr 1fr; gap:40px; text-align:left; }
+.review-tile .stars { justify-content:flex-start; margin:0 0 14px; }
+.review-tile p { margin:0; font:400 18px/1.5 "Libre Caslon Display",serif; color:#e6ede9; }
+.review-tile span { display:block; margin-top:16px; color:#aebfba; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
 
 .about-grid { display:grid; grid-template-columns:1.05fr 1fr 230px; align-items:center; gap:70px; }
 .about-copy { color:#657572; line-height:1.7; }
@@ -163,6 +167,7 @@ footer { background:#132c2d; color:#d8e2df; padding:74px 0 25px; }
   .why-image { min-height:440px; } .script-note { right:-5px; }
   .about-grid { gap:28px; }
   .cta-inner { min-height:300px; flex-direction:column; align-items:flex-start; justify-content:center; }
+  .more-reviews { grid-template-columns:1fr; gap:30px; margin-top:40px; padding-top:40px; }
   .footer-grid { grid-template-columns:1fr 1fr; }
   .footer-grid > div:first-child { grid-column:1/-1; } .footer-grid > div:last-child { grid-column:auto; }
   .footer-bottom { gap:20px; flex-direction:column; }
@@ -295,6 +300,9 @@ h1 em { color:#f0b937; font-style:normal; font-variation-settings:"SOFT" 100,"WO
 .quote-icon,.stars { color:var(--gold); }
 blockquote { font-size:clamp(34px,4.7vw,55px); font-weight:700; line-height:1.12; }
 .testimonial p span { color:#f2d8c5; font-size:13px; }
+.more-reviews { border-top:2px dashed #f5e0c85c; }
+.review-tile p { color:#fdf2d9; font:650 20px/1.45 "Fraunces",serif; }
+.review-tile span { color:#f2d8c5; }
 .about-stat {
   background:var(--gold); border:3px solid var(--ink); border-radius:50%;
   box-shadow:8px 8px 0 var(--rust); transform:rotate(3deg);
