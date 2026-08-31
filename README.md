@@ -1,1 +1,10 @@
-# Threads of Tradition Quilt Shop\n\nA front-page redesign for Threads of Tradition, a family-owned quilt shop on historic Route 66 in Yukon, Oklahoma.\n\nThis branch is a self-contained source export from the `microsites` collection.\n\n## Run locally\n\n```bash\nnpm install\nnpm run dev\n```\n\nThe two shop photographs intentionally load from the shop's existing hosted image URLs.\n
+# Threads of Tradition Quilt Shop
+
+A marketing site built with Next.js.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
