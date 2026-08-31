@@ -47,7 +47,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-photo" role="img" aria-label="HVAC technician servicing an outdoor air conditioning unit" />
+        <div className="hero-photo" role="img" aria-label="Outdoor air conditioning condenser unit installed beside a home" />
         <div className="hero-shade" />
         <div className="shell hero-grid">
           <div className="hero-copy">
