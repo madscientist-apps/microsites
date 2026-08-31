@@ -36,7 +36,7 @@ h1,h2,h3,.wordmark strong { font-family:Georgia,"Times New Roman",serif; }
 .button-light { background:var(--cream); color:var(--ink); }
 .text-link { font-size:13px; font-weight:900; padding:8px 0; }
 .text-link span { margin-left:10px; }
-.hero-photo { position:relative; min-height:700px; background:linear-gradient(90deg,rgba(15,76,80,.18),transparent 35%),url('https://media.rainpos.com/13352/Untitled.jpg') center/cover no-repeat; }
+.hero-photo { position:relative; min-height:700px; background:linear-gradient(90deg,rgba(15,76,80,.18),transparent 35%),url('/hero-fabric.png') center/cover no-repeat; }
 .photo-note { position:absolute; right:0; bottom:0; width:210px; padding:22px 24px; background:var(--orange); color:white; }
 .photo-note span { display:block; font-size:10px; font-weight:900; letter-spacing:.16em; line-height:1.35; }
 .photo-note b { display:block; margin-top:8px; font-family:Georgia,serif; font-size:19px; }
