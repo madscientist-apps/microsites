@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "../vendor/shadcn-tailwind-4.13.0.css";
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&display=swap');
 
 :root { --ink:#142c2d; --cream:#f5f0e7; --paper:#fffdf8; --green:#315e50; --green2:#21483f; --rust:#bd503b; --gold:#e1a33a; --line:#dcd5c8; }
