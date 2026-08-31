@@ -122,6 +122,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="gallery section" id="systems">
+        <div className="shell">
+          <div className="section-heading">
+            <p className="kicker">Equipment we install and service</p>
+            <h2>Built to run quietly for years.</h2>
+          </div>
+          <div className="gallery-grid">
+            <figure className="gallery-tile">
+              <div className="gallery-photo" role="img" aria-label="Outdoor residential air conditioning condenser unit installed on a concrete pad" style={{ backgroundImage: "url('https://images.pexels.com/photos/24828656/pexels-photo-24828656.jpeg?auto=compress&cs=tinysrgb&w=1200')" }} />
+              <figcaption>Residential condenser installs</figcaption>
+            </figure>
+            <figure className="gallery-tile">
+              <div className="gallery-photo" role="img" aria-label="Row of multiple outdoor air conditioning units serving a commercial building" style={{ backgroundImage: "url('https://images.pexels.com/photos/28726413/pexels-photo-28726413.jpeg?auto=compress&cs=tinysrgb&w=1200')" }} />
+              <figcaption>Multi-unit &amp; commercial systems</figcaption>
+            </figure>
+            <figure className="gallery-tile">
+              <div className="gallery-photo" role="img" aria-label="HVAC technician inspecting an outdoor unit during a service call" style={{ backgroundImage: "url('https://images.pexels.com/photos/32497161/pexels-photo-32497161.jpeg?auto=compress&cs=tinysrgb&w=1200')" }} />
+              <figcaption>Routine inspection &amp; service</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="why section" id="why-rainbow">
         <div className="shell why-grid">
           <div className="why-image-wrap">
