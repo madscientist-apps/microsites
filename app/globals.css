@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "../vendor/shadcn-tailwind-4.13.0.css";
 
 :root { --cream:#f3ecdf; --paper:#fbf7ef; --espresso:#2a1c16; --cocoa:#50382d; --sage:#8a9a73; --rose:#b9736b; --line:rgba(42,28,22,.18); }
 * { box-sizing:border-box; }
