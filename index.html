@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Microsites</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f5f2;
+    --card: #ffffff;
+    --border: #e4e1da;
+    --text: #1c1b19;
+    --muted: #6b6660;
+    --accent: #b5652f;
+    --accent-hover: #954f22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171614;
+      --card: #211f1c;
+      --border: #38352f;
+      --text: #f2efe9;
+      --muted: #a39d92;
+      --accent: #e08a4f;
+      --accent-hover: #f0a066;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    padding: 48px 20px 80px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  p.sub { color: var(--muted); margin: 0 0 36px; font-size: 0.95rem; }
+  .status { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+  ul.sites { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  li.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .name { font-weight: 600; font-size: 1.02rem; word-break: break-word; }
+  .branch { color: var(--muted); font-size: 0.82rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 2px; }
+  .links { display: flex; gap: 10px; flex-shrink: 0; }
+  a.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    white-space: nowrap;
+  }
+  a.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  a.btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  a.btn:hover { border-color: var(--accent); }
+  .empty, .error {
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding: 24px 0;
+  }
+  .error { color: #c0392b; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.8rem; text-align: center; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Microsites</h1>
+  <p class="sub">Client site previews, one per branch. Pick a site to open its live Vercel preview.</p>
+  <div id="status" class="status">Loading branches…</div>
+  <ul id="sites" class="sites"></ul>
+  <footer>
+    Source: <a href="https://github.com/madscientist-apps/microsites" target="_blank" rel="noopener">github.com/madscientist-apps/microsites</a>
+  </footer>
+</div>
+
+<script>
+  const OWNER = "madscientist-apps";
+  const REPO = "microsites";
+  const VERCEL_PROJECT = "microsites-noap";
+  const VERCEL_TEAM = "madscientist-apps";
+  const EXCLUDED_BRANCHES = new Set(["main", "master"]);
+
+  function slugifyBranch(branch) {
+    return branch.toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 63);
+  }
+
+  function vercelPreviewUrl(branch) {
+    const slug = slugifyBranch(branch);
+    return `https://${VERCEL_PROJECT}-git-${slug}-${VERCEL_TEAM}.vercel.app`;
+  }
+
+  function humanizeName(branch) {
+    return branch
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  async function loadBranches() {
+    const statusEl = document.getElementById("status");
+    const listEl = document.getElementById("sites");
+    try {
+      const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`, {
+        headers: { Accept: "application/vnd.github+json" }
+      });
+      if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
+      const branches = await res.json();
+      const sites = branches
+        .map(b => b.name)
+        .filter(name => !EXCLUDED_BRANCHES.has(name))
+        .sort((a, b) => a.localeCompare(b));
+
+      if (sites.length === 0) {
+        statusEl.textContent = "";
+        listEl.innerHTML = '<div class="empty">No client branches yet. Push a new branch to see it appear here.</div>';
+        return;
+      }
+
+      statusEl.textContent = `${sites.length} site${sites.length === 1 ? "" : "s"}`;
+      listEl.innerHTML = sites.map(branch => {
+        const preview = vercelPreviewUrl(branch);
+        const repoBranchUrl = `https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}`;
+        return `
+          <li class="card">
+            <div>
+              <div class="name">${humanizeName(branch)}</div>
+              <div class="branch">${branch}</div>
+            </div>
+            <div class="links">
+              <a class="btn" href="${repoBranchUrl}" target="_blank" rel="noopener">Code</a>
+              <a class="btn primary" href="${preview}" target="_blank" rel="noopener">Open preview</a>
+            </div>
+          </li>
+        `;
+      }).join("");
+    } catch (err) {
+      statusEl.textContent = "";
+      listEl.innerHTML = `<div class="error">Couldn't load branches: ${err.message}. Try refreshing.</div>`;
+    }
+  }
+
+  loadBranches();
+</script>
+</body>
+</html>
