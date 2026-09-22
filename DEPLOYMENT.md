@@ -12,10 +12,10 @@ This policy applies to branches containing this configuration, not old branches 
 
 1. Work on main or an ordinary task branch. Preserve existing app-specific validation, data and release-note requirements.
 2. Complete the requested task, validate it locally, and commit/push the finished state to GitHub. Batch file uploads and edits.
-3. Check whether the same completed source SHA already has a ready preview. Reuse it if so.
+3. Check whether the same completed source SHA already has a ready preview (branch-name SHA suffix or `.deployment-ready.json` sourceSha). Reuse it if so.
 4. Choose a new branch name such as preview-ready-20260922-taskname-<short-source-sha>. It must not be the project's production branch. Never push intermediate edits to this branch.
 5. With an authenticated local Git checkout, run: git push origin HEAD:refs/heads/<new-preview-ready-name>
-6. With only the GitHub connector, create_branch with repository_full_name, branch_name and sha set to the finished commit. Check Vercel for that exact branch/SHA. If branch creation does not trigger Vercel, do not repeatedly create branches; report the limitation and use an authenticated Git push or Vercel CLI/API when available.
+6. With only the GitHub connector, create_branch at the finished source SHA. Branch creation alone did not trigger Vercel in the rollout test. Read the finished commit's tree, create_tree using that base tree and one metadata file `.deployment-ready.json` containing the source SHA and task name, then create_commit with the finished SHA as parent and update_ref on the NEW preview-ready branch with force=false. This final ref update is the ready signal. Do not add application edits to the preview branch. Check whether branch creation has already triggered a build before the metadata update, and reuse that build if present. Check for an existing preview-ready branch carrying the same source SHA before starting this sequence.
 7. Wait for the deployment outcome and return its actual URL. Check failures before retrying; retries are for a diagnosed fix, never polling by redeployment.
 
 Creating a preview-ready branch is the explicit ready signal. Chat sessions do not emit an automatic end event. If the requested work is unfinished or the session is interrupted, leave saved work without deploying it.
@@ -37,3 +37,7 @@ For a new Vercel project, merge this into its configuration before connecting Gi
 ```
 
 Copy the deployment guidance into AGENTS.md and CLAUDE.md. This repository policy is not an account-wide setting and new repositories do not inherit it automatically.
+
+## Verified rollout
+
+On 2026-09-22, the Helmsman ordinary main commit was saved without a new production deployment. Creating the preview branch alone produced no observed build. A single final commit/ref update on preview-ready-deployment-policy-9d28b912 produced READY deployment dpl_8HwT93BBWN6AeQp4SoYdbovdPrBV. The production deployment remained unchanged. This validates the connector's final-ref-update path, not an automatic chat-end event.
