@@ -4,6 +4,10 @@ Aaron-approved policy, 2026-09-23. This file supersedes older deployment instruc
 
 Mad App Lists is the routing source of truth: https://github.com/madscientist-apps/madapplist/blob/main/hosting-registry.json and docs/BUILD_WORKFLOWS.md. Read the current project record before edits. GitHub owns code. A policy is not proof a host is configured.
 
+## Client branches take precedence
+
+This repository holds distinct client variants. Start each task from that client's existing source branch. Create a work branch from it and target the client's recorded production branch in the PR, not umbrella main. Each Netlify client project must map to its own source branch. Never merge unrelated client variants into shared main. References to main below apply only to work on the umbrella itself.
+
 ## Netlify preview-first
 
 - Work on a persistent task branch such as work/<task>. Keep main for reviewed releases. Do not merge unfinished work to main at the end of a session.
