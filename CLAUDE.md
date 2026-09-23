@@ -1,3 +1,7 @@
+## Current build routing (2026-09-23)
+
+Read [BUILD_WORKFLOW.md](BUILD_WORKFLOW.md) before editing or deploying. It supersedes older hosting, branch, preview and #ship deployment instructions below. Mad App Lists remains the central routing source. Existing product and security instructions still apply.
+
 # Claude instructions
 
 ## Vercel deployment policy (Aaron-approved, 2026-09-22)
