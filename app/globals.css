@@ -1,4 +1,21 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(/fonts/font-0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/font-1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 
 :root {
   --ink: #0a1925;
@@ -97,7 +114,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .story-copy p { color: #626b6f; line-height: 1.8; font-size: 14px; }
 .story-copy .lead { color: var(--ink); font-size: 17px; line-height: 1.7; font-weight: 550; margin: 30px 0 20px; }
 .signature { margin-top: 34px; display: flex; flex-direction: column; border-left: 3px solid var(--amber); padding-left: 17px; }
-.signature span { font-family: Georgia, serif; font-style: italic; font-size: 20px; }
+.signature span { font-family: var(--font-display); font-style: italic; font-size: 20px; }
 .signature small { margin-top: 7px; font-size: 8px; letter-spacing: .18em; color: #7a8589; }
 
 .promise { background: var(--ink); color: white; display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; padding: 120px max(7vw, 25px); }
@@ -110,7 +127,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .promise-list p { color: #9fadb3; font-size: 13px; line-height: 1.7; margin: 0; }
 
 .testimonial { text-align: center; background: #e8b14e; padding-top: 100px; padding-bottom: 100px; }
-.quote-mark { font-family: Georgia, serif; font-size: 100px; height: 72px; color: rgba(10,25,37,.28); }
+.quote-mark { font-family: var(--font-display); font-size: 100px; height: 72px; color: rgba(10,25,37,.28); }
 .testimonial blockquote { max-width: 960px; margin: 20px auto 36px; font-size: clamp(26px, 3.4vw, 48px); line-height: 1.25; font-weight: 680; letter-spacing: -.035em; }
 .quote-credit { display: flex; flex-direction: column; align-items: center; gap: 5px; }
 .stars { font-size: 11px; letter-spacing: .16em; }
@@ -198,3 +215,18 @@ footer { background: #06121b; color: white; padding: 70px max(6vw, 24px) 25px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* Brand typography: display, reading, and supporting interface roles. */
+:root{--font-display:"Space Grotesk",serif;--font-body:"Source Sans 3",sans-serif;}
+body,button,input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3{text-wrap:balance;}
+h1,h2,h3,.brand-copy strong,.big-number,.rescue-card>div span {font-family:var(--font-display);font-weight:600;}
+.hero h1 {font-size:clamp(48px,5.6vw,82px);line-height:1.06;letter-spacing:-.045em;font-weight:600;}
+.section-heading h2,.story-copy h2,.promise h2,.rescue h2 {line-height:1.12;letter-spacing:-.035em;font-weight:600;}
+body {font-size:17px;line-height:1.6;}
+.hero-lede {font-size:19px;}.service-card p,.promise-list p{font-size:15px;}
+.eyebrow,.service-number,.story-year,.brand-copy small{font-family:var(--font-display);letter-spacing:.12em;}
+.testimonial blockquote{font-family:var(--font-display);font-weight:500;line-height:1.35;}
+.signature span{font-family:var(--font-body);font-style:normal;font-weight:600;}
+@media(max-width:680px){.hero h1{font-size:clamp(38px,10.8vw,58px)}.section-heading h2,.story-copy h2,.promise h2,.rescue h2{font-size:clamp(34px,9vw,43px)}}
