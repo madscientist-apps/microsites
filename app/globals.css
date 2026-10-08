@@ -1,4 +1,45 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/font-0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/font-1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/font-3.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 
 :root { --ink:#102f37; --teal:#0f4c50; --teal-light:#2f7b78; --orange:#d76035; --gold:#e9ad3f; --cream:#f5eedf; --paper:#fbf8f0; --navy:#102d3a; --line:rgba(16,47,55,.2); }
 * { box-sizing:border-box; }
@@ -7,7 +48,7 @@ body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui
 a { color:inherit; text-decoration:none; }
 button,input { font:inherit; }
 h1,h2,h3,p { margin-top:0; }
-h1,h2,h3,.wordmark strong { font-family:Georgia,"Times New Roman",serif; }
+h1,h2,h3,.wordmark strong { font-family:var(--font-display); }
 
 .shipping-bar { height:36px; padding:0 clamp(20px,5vw,76px); display:flex; align-items:center; justify-content:space-between; background:var(--navy); color:#fff7e8; font-size:12px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
 .site-header { min-height:92px; padding:14px clamp(20px,5vw,76px); display:flex; align-items:center; gap:38px; border-bottom:1px solid var(--line); background:var(--paper); }
@@ -39,7 +80,7 @@ h1,h2,h3,.wordmark strong { font-family:Georgia,"Times New Roman",serif; }
 .hero-photo { position:relative; min-height:700px; background:linear-gradient(90deg,rgba(15,76,80,.18),transparent 35%),url('/hero-fabric.png') center/cover no-repeat; }
 .photo-note { position:absolute; right:0; bottom:0; width:210px; padding:22px 24px; background:var(--orange); color:white; }
 .photo-note span { display:block; font-size:10px; font-weight:900; letter-spacing:.16em; line-height:1.35; }
-.photo-note b { display:block; margin-top:8px; font-family:Georgia,serif; font-size:19px; }
+.photo-note b { display:block; margin-top:8px; font-family:var(--font-display); font-size:19px; }
 
 .section-shell { max-width:1440px; margin:0 auto; padding-left:clamp(24px,6vw,90px); padding-right:clamp(24px,6vw,90px); }
 .intro { padding-top:105px; padding-bottom:68px; }
@@ -64,7 +105,7 @@ h1,h2,h3,.wordmark strong { font-family:Georgia,"Times New Roman",serif; }
 .quilt-window { margin:38px auto 20px; width:220px; height:220px; display:grid; grid-template-columns:repeat(4,1fr); transform:rotate(45deg); box-shadow:12px 12px 0 rgba(16,47,55,.15); }
 .quilt-window i { border:1px solid rgba(245,238,223,.55); background:var(--teal); } .quilt-window i:nth-child(3n){background:var(--orange)} .quilt-window i:nth-child(4n){background:#f3e3c4} .quilt-window i:nth-child(5n){background:#693e60}
 .postal-mark { width:220px; height:220px; margin:38px auto 20px; border:4px double rgba(255,255,255,.75); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; transform:rotate(-8deg); text-align:center; }
-.postal-mark b { font:700 28px/1 Georgia,serif; } .postal-mark span { margin-top:12px; font:800 10px/1 sans-serif; letter-spacing:.18em; }
+.postal-mark b { font:700 28px/1 var(--font-display); } .postal-mark span { margin-top:12px; font:800 10px/1 sans-serif; letter-spacing:.18em; }
 
 .mystery { min-height:680px; display:grid; grid-template-columns:.7fr .9fr .7fr; align-items:center; position:relative; overflow:hidden; padding:86px clamp(28px,6vw,90px); background:var(--navy); color:white; }
 .mystery-pattern { position:absolute; inset:0; opacity:.07; background-image:linear-gradient(45deg,#fff 25%,transparent 25%),linear-gradient(-45deg,#fff 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#fff 75%),linear-gradient(-45deg,transparent 75%,#fff 75%); background-size:80px 80px; background-position:0 0,0 40px,40px -40px,-40px 0; }
@@ -109,3 +150,16 @@ footer { background:var(--teal); color:white; }
   body{font-size:16px}.shipping-bar a{display:none}.shipping-bar{justify-content:center}.site-header{min-height:78px}.wordmark strong{font-size:20px}.wordmark small{display:none}.wordmark-mark{width:32px;height:32px}.header-cta{padding:10px 12px}.header-cta span{display:none}.hero-copy{padding-top:65px;padding-bottom:65px;min-height:570px}.hero h1{font-size:51px}.hero-photo{min-height:360px}.intro{padding-top:76px}.intro-grid,.newsletter{grid-template-columns:1fr;gap:28px}.three-paths{padding-bottom:76px}.mystery{grid-template-columns:1fr;padding-top:70px;padding-bottom:70px}.mystery-badge-wrap{justify-content:flex-start}.mystery-badge-wrap img{width:180px}.mystery-copy{padding:30px 0 0}.belong{grid-template-columns:1fr;padding-top:76px;padding-bottom:76px}.belong-art{min-height:390px}.large-block{width:250px;height:250px}.gift-band{align-items:flex-start;flex-direction:column;padding-top:68px;padding-bottom:68px}.newsletter{padding-top:76px;padding-bottom:76px}.footer-main{grid-template-columns:1fr}.footer-main>div:last-child{display:block}.footer-bottom{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Brand typography: display, reading, and supporting interface roles. */
+:root{--font-display:"DM Serif Display",serif;--font-body:"Lato",sans-serif;}
+body,button,input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3{text-wrap:balance;}
+h1,h2,h3,.wordmark strong,.photo-note b,.postal-mark b {font-family:var(--font-display);font-weight:400;}
+.hero h1 {font-size:clamp(48px,5.2vw,80px);line-height:1.08;letter-spacing:-.025em;}
+.intro h2,.mystery h2,.belong h2,.gift-band h2,.newsletter h2 {font-weight:400;line-height:1.13;letter-spacing:-.02em;}
+.hero h1 em,.belong h2 em {font-style:italic;}
+body {line-height:1.7;}
+.footer-main h3,.postal-mark span,.case-file>span {font-family:var(--font-body);}
+@media(max-width:720px){.hero h1{font-size:clamp(39px,10.5vw,55px)}.wordmark strong{font-size:20px}.intro h2,.mystery h2,.belong h2,.gift-band h2,.newsletter h2{font-size:clamp(34px,9vw,48px)}}
