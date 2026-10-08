@@ -1,8 +1,8 @@
 const menuItems = [
-  { name: "Salads", image: "/images/salad.webp", position: "center", tone: "lime" },
+  { name: "Tacos", image: "/images/taco-closeup.webp", position: "center", tone: "lime" },
   { name: "Chips & Salsa", image: "/images/queso-closeup.webp", position: "center", tone: "red" },
   { name: "Quesadilla", image: "/images/quesadilla.webp", position: "center", tone: "gold" },
-  { name: "Burritos", image: "/images/hero-food.webp", position: "73% 52%", tone: "ink" },
+  { name: "Burritos", image: "/images/burritos.webp", position: "center", tone: "ink" },
   { name: "Desserts", image: "/images/dessert.webp", position: "center", tone: "pink" },
 ];
 
