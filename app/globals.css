@@ -1,10 +1,25 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&display=swap');
+@font-face {
+  font-family: 'Archivo Narrow';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/font-0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(/fonts/font-1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 :root { --ink:#142c2d; --cream:#f5f0e7; --paper:#fffdf8; --green:#315e50; --green2:#21483f; --rust:#bd503b; --gold:#e1a33a; --line:#dcd5c8; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; background:var(--paper); color:var(--ink); font-family:"DM Sans",Arial,sans-serif; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); }
 a { color:inherit; text-decoration:none; }
 .shell { width:min(1180px, calc(100% - 48px)); margin:0 auto; }
 .topbar { background:var(--green2); color:#e8eee9; font-size:12px; letter-spacing:.03em; }
@@ -15,7 +30,7 @@ a { color:inherit; text-decoration:none; }
 .brand { display:flex; align-items:center; gap:10px; min-width:max-content; }
 .rainbow-mark { width:54px; height:34px; }
 .brand-copy { display:flex; flex-direction:column; line-height:.9; }
-.brand-copy strong { font:400 23px/1 "Libre Caslon Display",Georgia,serif; letter-spacing:.045em; }
+.brand-copy strong { font:400 23px/1 "Fraunces",var(--font-display); letter-spacing:.045em; }
 .brand-copy small { margin-top:5px; font-size:9px; font-weight:700; letter-spacing:.3em; }
 nav { display:flex; gap:28px; font-size:13px; font-weight:600; }
 nav a { padding:10px 0; border-bottom:1px solid transparent; }
@@ -38,7 +53,7 @@ nav a:hover { border-color:var(--rust); }
 .eyebrow,.kicker { font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
 .eyebrow { display:flex; align-items:center; gap:12px; color:#e9d8b6; }
 .eyebrow span { width:34px; height:1px; background:var(--gold); }
-h1,h2,blockquote { font-family:"Libre Caslon Display",Georgia,serif; font-weight:400; }
+h1,h2,blockquote { font-family:"Fraunces",var(--font-display); font-weight:400; }
 h1 { max-width:720px; margin:25px 0 23px; font-size:clamp(56px,6vw,86px); line-height:.98; letter-spacing:-.035em; }
 h1 em { color:#f1c566; font-style:italic; }
 .hero-copy > p { max-width:600px; margin:0; color:#dce4df; font-size:18px; line-height:1.65; }
@@ -67,9 +82,9 @@ h1 em { color:#f1c566; font-style:italic; }
 .legacy-strip { background:var(--cream); border-bottom:1px solid var(--line); }
 .legacy-grid { min-height:120px; display:grid; grid-template-columns:260px 1fr auto; align-items:center; gap:35px; }
 .legacy-year { display:flex; align-items:center; gap:13px; padding-right:34px; border-right:1px solid var(--line); }
-.legacy-year strong { font:400 58px/1 "Libre Caslon Display",serif; color:var(--rust); }
+.legacy-year strong { font:400 58px/1 "Fraunces",serif; color:var(--rust); }
 .legacy-year span { font-size:12px; line-height:1.4; text-transform:uppercase; letter-spacing:.1em; font-weight:700; }
-.legacy-grid > p { max-width:390px; color:#5b6b69; font:400 19px/1.5 "Libre Caslon Display",serif; }
+.legacy-grid > p { max-width:390px; color:#5b6b69; font:400 19px/1.5 "Fraunces",serif; }
 .legacy-points { display:flex; gap:18px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
 .legacy-points span { display:flex; align-items:center; gap:5px; }
 .legacy-points svg { width:16px; color:var(--green); }
@@ -85,7 +100,7 @@ h1 em { color:#f1c566; font-style:italic; }
 .icon-box { width:58px; height:58px; display:grid; place-items:center; margin-bottom:55px; background:#edf3f0; color:var(--green); border-radius:50%; }
 .heating .icon-box { background:#f8e9e4; color:var(--rust); }
 .systems .icon-box { background:#fbf1d9; color:#a66e18; }
-.service-tile h3 { font:400 31px/1.1 "Libre Caslon Display",serif; margin:0 0 14px; }
+.service-tile h3 { font:400 31px/1.1 "Fraunces",serif; margin:0 0 14px; }
 .service-tile p { color:#687674; font-size:14px; line-height:1.65; }
 .service-tile a,.about-copy a { display:flex; align-items:center; gap:8px; margin-top:26px; color:var(--green); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
 .service-tile a svg,.about-copy a svg { width:16px; }
@@ -99,9 +114,9 @@ h1 em { color:#f1c566; font-style:italic; }
 .why-grid { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:100px; }
 .why-image-wrap { position:relative; }
 .why-image { min-height:580px; background:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=86') center/cover; }
-.script-note { position:absolute; right:-34px; bottom:48px; padding:21px 25px; background:#fffdf8; box-shadow:0 16px 40px #162e2924; font:italic 17px/1.3 "Libre Caslon Display",serif; transform:rotate(-2deg); }
+.script-note { position:absolute; right:-34px; bottom:48px; padding:21px 25px; background:#fffdf8; box-shadow:0 16px 40px #162e2924; font:italic 17px/1.3 "Fraunces",serif; transform:rotate(-2deg); }
 .script-note span { color:var(--rust); }
-.why-copy .lead,.about-copy .lead { font:400 20px/1.55 "Libre Caslon Display",serif; color:#3f5350; }
+.why-copy .lead,.about-copy .lead { font:400 20px/1.55 "Fraunces",serif; color:#3f5350; }
 .reason-list { margin-top:35px; }
 .reason-list > div { display:grid; grid-template-columns:48px 1fr; gap:16px; padding:19px 0; border-top:1px solid #d5cec0; }
 .reason-list > div:last-child { border-bottom:1px solid #d5cec0; }
@@ -120,14 +135,14 @@ blockquote { margin:0 auto; font-size:clamp(30px,4.5vw,50px); line-height:1.22; 
 .testimonial p span { color:#aebfba; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
 .more-reviews { margin-top:60px; padding-top:52px; border-top:1px solid #ffffff26; display:grid; grid-template-columns:1fr 1fr; gap:40px; text-align:left; }
 .review-tile .stars { justify-content:flex-start; margin:0 0 14px; }
-.review-tile p { margin:0; font:400 18px/1.5 "Libre Caslon Display",serif; color:#e6ede9; }
+.review-tile p { margin:0; font:400 18px/1.5 "Fraunces",serif; color:#e6ede9; }
 .review-tile span { display:block; margin-top:16px; color:#aebfba; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
 
 .about-grid { display:grid; grid-template-columns:1.05fr 1fr 230px; align-items:center; gap:70px; }
 .about-copy { color:#657572; line-height:1.7; }
 .about-stat { min-height:240px; padding:28px; background:var(--cream); border:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; text-align:center; }
 .about-stat span,.about-stat small { font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; }
-.about-stat strong { font:400 53px/1.25 "Libre Caslon Display",serif; color:var(--rust); }
+.about-stat strong { font:400 53px/1.25 "Fraunces",serif; color:var(--rust); }
 .cta { background:var(--rust); color:#fff; }
 .cta-inner { min-height:250px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
 .cta .kicker { color:#f8d08d; }
@@ -141,7 +156,7 @@ footer { background:#132c2d; color:#d8e2df; padding:74px 0 25px; }
 .footer-grid > div:not(:first-child) { display:flex; flex-direction:column; gap:10px; }
 .footer-grid a,.footer-grid span { color:#b9c8c4; font-size:12px; line-height:1.6; }
 .footer-grid a:hover { color:#fff; }
-.footer-phone { color:#fff!important; font:400 18px/1.3 "Libre Caslon Display",serif!important; }
+.footer-phone { color:#fff!important; font:400 18px/1.3 "Fraunces",serif!important; }
 .footer-bottom { margin-top:60px; padding-top:22px; border-top:1px solid #ffffff1d; display:flex; justify-content:space-between; color:#77908a; font-size:10px; }
 
 @media (max-width:1000px) {
@@ -199,7 +214,7 @@ body {
   background-size:5px 5px;
 }
 h1,h2,blockquote,.service-card h2,.service-tile h3,.legacy-year strong,.about-stat strong,.brand-copy strong,.footer-phone {
-  font-family:"Fraunces",Georgia,serif;
+  font-family:"Fraunces",var(--font-display);
   font-variation-settings:"SOFT" 85,"WONK" 1;
 }
 .topbar { background:var(--gold); color:var(--ink); border-bottom:2px solid var(--ink); font-size:13px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
@@ -346,3 +361,15 @@ footer { background:var(--ink); border-top:12px solid var(--gold); }
   .brand-copy small { font-size:7px; }
   .year-stamp { width:88px; height:88px; top:-43px; }
 }
+
+
+/* Brand typography: display, reading, and supporting interface roles. */
+:root{--font-display:"Fraunces",serif;--font-body:"Archivo Narrow",sans-serif;}
+body,button,input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3{text-wrap:balance;}
+h1,h2,blockquote,.service-tile h3,.brand-copy strong { font-family:var(--font-display);font-variation-settings:"SOFT" 85,"WONK" 1; }
+h1 {font-weight:850;line-height:1.02;letter-spacing:-.035em;font-size:clamp(48px,5.5vw,80px);}
+h2 {line-height:1.1;}
+body {font-family:var(--font-body);font-size:18px;line-height:1.55;}
+nav,.topbar,.eyebrow,.button {font-family:var(--font-body);letter-spacing:.075em;}
+@media(max-width:680px){h1{font-size:clamp(37px,10vw,56px);line-height:1.04}.brand-copy strong{font-size:21px}}
