@@ -4,5 +4,9 @@
       "**": false,
       "preview-ready-*": true
     }
-  }
+  },
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": "."
 }

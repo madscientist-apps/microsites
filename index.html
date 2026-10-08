@@ -1,162 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Microsites</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsites | Website previews by Aaron Salvato</title>
+<meta name="description" content="Explore six small-business website concepts by Aaron Salvato. Pick a site and take a look around.">
+<meta name="robots" content="noindex, nofollow">
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f6f5f2;
-    --card: #ffffff;
-    --border: #e4e1da;
-    --text: #1c1b19;
-    --muted: #6b6660;
-    --accent: #b5652f;
-    --accent-hover: #954f22;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #171614;
-      --card: #211f1c;
-      --border: #38352f;
-      --text: #f2efe9;
-      --muted: #a39d92;
-      --accent: #e08a4f;
-      --accent-hover: #f0a066;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    padding: 48px 20px 80px;
-  }
-  .wrap { max-width: 780px; margin: 0 auto; }
-  h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.01em; }
-  p.sub { color: var(--muted); margin: 0 0 36px; font-size: 0.95rem; }
-  .status { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
-  ul.sites { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-  li.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .name { font-weight: 600; font-size: 1.02rem; word-break: break-word; }
-  .branch { color: var(--muted); font-size: 0.82rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 2px; }
-  .links { display: flex; gap: 10px; flex-shrink: 0; }
-  a.btn {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    color: var(--text);
-    white-space: nowrap;
-  }
-  a.btn.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
-  a.btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-  a.btn:hover { border-color: var(--accent); }
-  .empty, .error {
-    color: var(--muted);
-    font-size: 0.95rem;
-    padding: 24px 0;
-  }
-  .error { color: #c0392b; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 0.8rem; text-align: center; }
-  footer a { color: inherit; }
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#222a28;background:#f5f3ed;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:64px 24px 36px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:750;color:#526760;margin:0 0 20px}h1{font-size:clamp(40px,7vw,68px);line-height:1.05;letter-spacing:-.055em;margin:0 0 20px;font-weight:750}.intro{font-size:18px;line-height:1.6;color:#626b65;max-width:590px;margin:0 0 38px}.grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:#fffdf8;border:1px solid #dedfd6;border-radius:18px;overflow:hidden;display:flex;flex-direction:column}.art{padding:27px 24px;font-size:42px;background:var(--tint);min-height:108px}.body{padding:24px;display:flex;flex-direction:column;flex:1}.tag{text-transform:uppercase;letter-spacing:.08em;font-size:10px;font-weight:750;color:#67726b;margin:0 0 10px}h2{font-size:21px;letter-spacing:-.025em;margin:0 0 10px}.description{font-size:14px;line-height:1.6;color:#69716b;margin:0 0 26px;flex:1}.link{display:flex;justify-content:space-between;gap:12px;padding:12px 15px;border-radius:8px;background:#223e33;color:white;text-decoration:none;font-weight:650;font-size:13px}.link:hover{background:#365b49}.link:focus-visible{outline:3px solid #d48436;outline-offset:4px}footer{padding:30px 0 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#737a72}footer p{margin:0}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){main{padding:40px 18px 28px}.grid{grid-template-columns:1fr}.intro{font-size:16px}.art{min-height:85px;padding:18px 24px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-  <h1>Microsites</h1>
-  <p class="sub">Client site previews, one per branch. Pick a site to open its live Vercel preview.</p>
-  <div id="status" class="status">Loading branches…</div>
-  <ul id="sites" class="sites"></ul>
-  <footer>
-    Source: <a href="https://github.com/madscientist-apps/microsites" target="_blank" rel="noopener">github.com/madscientist-apps/microsites</a>
-  </footer>
-</div>
-
-<script>
-  const OWNER = "madscientist-apps";
-  const REPO = "microsites";
-  const VERCEL_PROJECT = "microsites-sites";
-  const VERCEL_TEAM = "madscientist-apps";
-  const EXCLUDED_BRANCHES = new Set(["main", "master"]);
-
-  function slugifyBranch(branch) {
-    return branch.toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 63);
-  }
-
-  function vercelPreviewUrl(branch) {
-    const slug = slugifyBranch(branch);
-    return `https://${VERCEL_PROJECT}-git-${slug}-${VERCEL_TEAM}.vercel.app`;
-  }
-
-  function humanizeName(branch) {
-    return branch
-      .replace(/[-_]+/g, " ")
-      .replace(/\b\w/g, c => c.toUpperCase());
-  }
-
-  async function loadBranches() {
-    const statusEl = document.getElementById("status");
-    const listEl = document.getElementById("sites");
-    try {
-      const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`, {
-        headers: { Accept: "application/vnd.github+json" }
-      });
-      if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
-      const branches = await res.json();
-      const sites = branches
-        .map(b => b.name)
-        .filter(name => !EXCLUDED_BRANCHES.has(name))
-        .sort((a, b) => a.localeCompare(b));
-
-      if (sites.length === 0) {
-        statusEl.textContent = "";
-        listEl.innerHTML = '<div class="empty">No client branches yet. Push a new branch to see it appear here.</div>';
-        return;
-      }
-
-      statusEl.textContent = `${sites.length} site${sites.length === 1 ? "" : "s"}`;
-      listEl.innerHTML = sites.map(branch => {
-        const preview = vercelPreviewUrl(branch);
-        const repoBranchUrl = `https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}`;
-        return `
-          <li class="card">
-            <div>
-              <div class="name">${humanizeName(branch)}</div>
-              <div class="branch">${branch}</div>
-            </div>
-            <div class="links">
-              <a class="btn" href="${repoBranchUrl}" target="_blank" rel="noopener">Code</a>
-              <a class="btn primary" href="${preview}" target="_blank" rel="noopener">Open preview</a>
-            </div>
-          </li>
-        `;
-      }).join("");
-    } catch (err) {
-      statusEl.textContent = "";
-      listEl.innerHTML = `<div class="error">Couldn't load branches: ${err.message}. Try refreshing.</div>`;
-    }
-  }
-
-  loadBranches();
-</script>
-</body>
-</html>
+<body><main>
+<p class="eyebrow">Website concepts by Aaron Salvato</p>
+<h1>Small businesses.<br>Big personality.</h1>
+<p class="intro">Six websites in the works. Pick a business below to explore its design and take a look around.</p>
+<ul class="grid">
+<li class="card" style="--tint:#f8dfb9"><div class="art" aria-hidden="true">🌮</div><div class="body"><p class="tag">Restaurant</p><h2>Toni’s Taco</h2><p class="description">Brisket tacos, bold color, and a food-first homepage.</p><a class="link" href="https://microsites-sites-git-tonis-taco-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View Toni’s Taco website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+<li class="card" style="--tint:#e7eed5"><div class="art" aria-hidden="true">☀️</div><div class="body"><p class="tag">Heating & cooling</p><h2>Rainbow Heat &amp; Air</h2><p class="description">A welcoming local service website with a vintage feel.</p><a class="link" href="https://microsites-sites-git-rainbow-heat-air-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View Rainbow Heat &amp; Air website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+<li class="card" style="--tint:#f0e1e7"><div class="art" aria-hidden="true">🧵</div><div class="body"><p class="tag">Fabric & quilting</p><h2>Threads of Tradition</h2><p class="description">A colorful storefront for fabrics, quilting, and creativity.</p><a class="link" href="https://microsites-sites-git-threads-of-tradition-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View Threads of Tradition website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+<li class="card" style="--tint:#dde8e7"><div class="art" aria-hidden="true">🔧</div><div class="body"><p class="tag">Auto repair</p><h2>M&amp;J Auto Service</h2><p class="description">A straightforward home for a local automotive business.</p><a class="link" href="https://microsites-sites-git-mandj-auto-service-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View M&amp;J Auto Service website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+<li class="card" style="--tint:#e0eaf4"><div class="art" aria-hidden="true">❄️</div><div class="body"><p class="tag">Heating & cooling</p><h2>AC Medic HVAC</h2><p class="description">A service-focused website for home comfort.</p><a class="link" href="https://microsites-sites-git-ac-medic-hvac-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View AC Medic HVAC website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+<li class="card" style="--tint:#f2e4d0"><div class="art" aria-hidden="true">🥐</div><div class="body"><p class="tag">Bakery</p><h2>9OH6 Baking Co.</h2><p class="description">A small-business website with something sweet at its center.</p><a class="link" href="https://microsites-sites-git-9oh6-baking-co-madscientist-apps.vercel.app" target="_blank" rel="noopener" aria-label="View 9OH6 Baking Co. website, opens in a new tab">View website <span aria-hidden="true">↗</span></a></div></li>
+</ul><footer><p>Microsites · Aaron Salvato</p><p>Design previews · Sites are works in progress</p></footer>
+</main></body></html>
