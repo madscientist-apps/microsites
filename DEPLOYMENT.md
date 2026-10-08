@@ -41,3 +41,4 @@ Copy the deployment guidance into AGENTS.md and CLAUDE.md. This repository polic
 ## Verified rollout
 
 On 2026-09-22, the Helmsman ordinary main commit was saved without a new production deployment. Creating the preview branch alone produced no observed build. A single final commit/ref update on preview-ready-deployment-policy-9d28b912 produced READY deployment dpl_8HwT93BBWN6AeQp4SoYdbovdPrBV. The production deployment remained unchanged. This validates the connector's final-ref-update path, not an automatic chat-end event.
+

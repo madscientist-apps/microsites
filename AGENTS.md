@@ -16,3 +16,4 @@ Read DEPLOYMENT.md before changing or deploying this project. It is the current 
 - A preview is not a production release. Production publishing requires Aaron's release instruction and an authenticated Vercel deployment/promotion path; do not temporarily re-enable automatic builds on main.
 - Before resuming an old branch, copy this policy and the deployment gate into THAT branch, preserving its app configuration. Old branches do not inherit main's files. Never merge unrelated app changes just to install the gate.
 - Never force-push or rewrite published history. Never use Lovable's coding agent unless Aaron explicitly asks.
+
